@@ -8,12 +8,12 @@
     <nav>
       <ul class="nav__list">
         <li class="nav__item">
-          <a href="#" class="nav__link">
+          <a routerLink="/" class="nav__link"  [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }">
             <span class="nav__link-text">Início</span>
           </a>
         </li>
         <li class="nav__item">
-          <a href="#" class="nav__link">
+          <a routerLink="/blog" class="nav__link" [routerLinkActive]="'active'">
             <span class="nav__link-text">Blog</span>
           </a>
         </li>

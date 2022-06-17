@@ -6,14 +6,22 @@ const routes: Routes = [
   {
     path: '',
     component: MainLayoutComponent,
-    loadChildren: () =>
-      import('./modules/landing-page/landing-page.module').then((m) => m.LandingPageModule),
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./modules/landing-page/landing-page.module').then(
+            (m) => m.LandingPageModule
+          ),
+      },
+      {
+        path: 'blog',
+        loadChildren: () =>
+          import('./modules/blog/blog.module').then((m) => m.BlogModule),
+      },
+    ],
   },
-  {
-    path: 'blog',
-    loadChildren: () =>
-      import('./modules/blog/blog.module').then((m) => m.BlogModule),
-  },
+
   { path: '**', redirectTo: '' },
 ];
 
