@@ -11,13 +11,15 @@ export class CarouselComponent implements OnInit {
   @Input() slides: any[] = [];
 
   @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
-  configSwiper: SwiperOptions = {
+  @Input() config: SwiperOptions = {
     slidesPerView: 1,
     spaceBetween: 50,
     navigation: true,
     pagination: { clickable: true },
     scrollbar: { draggable: true },
     hashNavigation: false,
+    parallax: true,
+    loop: true,
   };
 
   constructor() { }
@@ -36,7 +38,7 @@ export class CarouselComponent implements OnInit {
   slideNext(){
     this.swiper?.swiperRef.slideNext(100);
   }
-  slidePrev(){
+  slidePrev() {
     this.swiper?.swiperRef.slidePrev(100);
   }
 }

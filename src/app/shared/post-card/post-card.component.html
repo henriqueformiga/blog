@@ -1,0 +1,17 @@
+<div class="card post-card">
+  <div class="card-body">
+
+    <div class="post-image">
+      <img [src]="post.image" alt="" />
+    </div>
+
+    <div class="post-content">
+      <h5 class="post-title">{{ post.title }}</h5>
+      <p class="post-description">{{ post.description }}</p>
+      <a [routerLink]="post.url" class="btn btn-primary float-end">
+        Ler mais
+      </a>
+
+    </div>
+  </div>
+</div>

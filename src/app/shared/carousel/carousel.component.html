@@ -1,21 +1,27 @@
-<swiper
-  [config]="configSwiper"
-  [spaceBetween]="50"
-  (swiper)="onSwiper($event)"
-  (slideChange)="onSlideChange()"
->
-  <ng-template swiperSlide *ngFor="let slide of slides; let i = index">
-    <div class="swiper-slide">
-      <img [src]="slide.image" alt="">
-      <div class="swiper-slide-caption">
-        <a [routerLink]="slide.url">
-          <h2>{{ slide.title }}</h2>
-          <p>{{ slide.description }}</p>
-        </a>
+<div class="swiper-container">
+  <swiper
+    #swiper
+    [config]="config"
+    [spaceBetween]="50"
+    (slideChange)="onSlideChange()"
+  >
+    <ng-template swiperSlide *ngFor="let slide of slides; let i = index">
+      <div class="swiper-slide">
+        <img [src]="slide.image" alt="" />
+        <div class="swiper-slide-caption">
+          <a [routerLink]="slide.url">
+            <h2>{{ slide.title }}</h2>
+            <p>{{ slide.description }}</p>
+          </a>
+        </div>
       </div>
-    </div>
-  </ng-template>
-</swiper>
+    </ng-template>
+  </swiper>
 
-<button (click)="slideNext()">Next slide</button>
-<button (click)="slidePrev()">Prev slide</button>
+  <button (click)="slidePrev()" class="btn swiper-prev">
+    <em class="fas fa-chevron-left"></em>
+  </button>
+  <button (click)="slideNext()" class="btn swiper-next">
+    <em class="fas fa-chevron-right"></em>
+  </button>
+</div>

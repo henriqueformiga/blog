@@ -5,6 +5,7 @@ import SwiperCore, { Navigation, Pagination, Scrollbar } from 'swiper';
 import { SwiperModule } from 'swiper/angular';
 import { ButtonComponent } from './button/button.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { PostCardComponent } from './post-card/post-card.component';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar]);
 
@@ -12,7 +13,8 @@ SwiperCore.use([Navigation, Pagination, Scrollbar]);
 @NgModule({
   declarations: [
     ButtonComponent,
-    CarouselComponent
+    CarouselComponent,
+    PostCardComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ SwiperCore.use([Navigation, Pagination, Scrollbar]);
     RouterModule
   ],
   exports: [
-    CarouselComponent
+    CarouselComponent,
+    PostCardComponent
   ]
 })
 export class SharedModule { }

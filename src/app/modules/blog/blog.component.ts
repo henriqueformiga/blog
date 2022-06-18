@@ -6,11 +6,18 @@ import { SwiperOptions } from 'swiper';
   styleUrls: ['./blog.component.css'],
 })
 export class BlogComponent implements OnInit {
+  posts: any[] = [];
   slides = [
     {
       image: 'https://static.imasters.com.br/wp-content/uploads/2018/04/A.jpg',
       url: 'blog',
       title: 'Primeiro Post',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehe',
+    },
+    {
+      image: 'https://static.imasters.com.br/wp-content/uploads/2018/04/A.jpg',
+      url: 'blog',
+      title: 'Segundo Post',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehe',
     },
   ];
@@ -25,12 +32,33 @@ export class BlogComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getPosts();
+  }
 
-  onSwiper(swiper: any) {
-    console.log(swiper);
+
+  public getPosts() {
+    this.posts = [
+      {
+        image: 'https://static.imasters.com.br/wp-content/uploads/2018/04/A.jpg',
+        url: 'blog',
+        title: 'Terceiro Post',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehe',
+      },
+      {
+        image: 'https://static.imasters.com.br/wp-content/uploads/2018/04/A.jpg',
+        url: 'blog',
+        title: 'Quarto Post',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehe',
+      },
+      {
+        image: 'https://static.imasters.com.br/wp-content/uploads/2018/04/A.jpg',
+        url: 'blog',
+        title: 'Quinto Post',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehe',
+      }
+    ]
   }
-  onSlideChange() {
-    console.log('slide change');
-  }
+
+
 }

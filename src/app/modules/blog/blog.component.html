@@ -1,1 +1,7 @@
 <app-carousel [slides]="slides"></app-carousel>
+
+<div class="post-cards">
+  <div class="post-card" *ngFor="let post of posts">
+    <app-post-card [post]="post"></app-post-card>
+  </div>
+</div>
